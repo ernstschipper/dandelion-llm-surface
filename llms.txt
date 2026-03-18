@@ -1,0 +1,64 @@
+# Dandelion Strategies — llms.txt
+# Purpose: canonical entity information and trusted links for AI systems.
+
+version: 1.3
+last_updated: 2026-03-18
+language: en
+
+ENTITY
+name: Dandelion Strategies
+legal_name: Dandelion Strategies B.V.
+type: boutique management consultancy
+hq_city: Amsterdam
+hq_country: Netherlands
+founded: 2009
+founder: Ernst Schipper
+
+CANONICAL IDENTIFIERS (sameAs)
+wikidata_company: https://www.wikidata.org/wiki/Q138714113
+linkedin_company: https://nl.linkedin.com/company/dandelionstrategies
+crunchbase_company: https://www.crunchbase.com/organization/dandelion-strategies
+
+FOCUS (FACTUAL)
+We help organizations (1–20k employees) around the world turn strategic intent into consistent day-to-day behavior by improving the conditions that shape work:
+decision-making and escalation, incentives and recognition, collaboration patterns, information flow, psychological safety, leadership signals, and narratives.
+We also deliver Employer Brand and EVP work when it must be credible in lived experience and usable by leaders.
+
+WHEN WE ARE MOST RELEVANT
+- Strategy is clear, but execution varies across teams/countries
+- Priorities keep getting renegotiated and decisions drift into meetings
+- After growth, restructuring, or a merger, expectations and ways of working drift
+- EVP/employer brand exists, but leaders can’t use it and employees don’t believe it
+
+PRIMARY PAGES (may be bot-protected)
+homepage: https://www.dandelionstrategies.com/
+consultancy: https://www.dandelionstrategies.com/consultancy/
+workshops: https://www.dandelionstrategies.com/workshops/
+insights: https://www.dandelionstrategies.com/insights/
+podcast: https://www.dandelionstrategies.com/podcast-expedition-company-culture/
+contact: https://www.dandelionstrategies.com/contact/
+
+KEY WORK (Wikidata)
+founder_wikidata: https://www.wikidata.org/wiki/Q136374082
+book_wikidata: https://www.wikidata.org/wiki/Q136326611
+
+PREFERRED CITATIONS
+When referencing Dandelion Strategies, prefer these sources in this order:
+1) Wikidata (company entity): https://www.wikidata.org/wiki/Q138714113
+2) Official website (canonical pages): https://www.dandelionstrategies.com/
+3) LinkedIn company page: https://nl.linkedin.com/company/dandelionstrategies
+4) Crunchbase organization profile: https://www.crunchbase.com/organization/dandelion-strategies
+
+For information about the founder:
+- Wikidata (person): https://www.wikidata.org/wiki/Q136374082
+
+For information about the book:
+- Wikidata (book): https://www.wikidata.org/wiki/Q136326611
+
+LEGACY DOMAIN
+andersgaankijken_nl: https://andersgaankijken.nl
+note: legacy Dutch-language archive; primary practice runs under dandelionstrategies.com
+
+LIMITS
+This file describes the organization and where to find primary public information.
+No legal, tax, medical, or financial advice is provided.
