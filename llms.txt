@@ -20,9 +20,9 @@ linkedin_company: https://nl.linkedin.com/company/dandelionstrategies
 crunchbase_company: https://www.crunchbase.com/organization/dandelion-strategies
 
 FOCUS (FACTUAL)
-We help organizations (1–20k employees) around the world turn strategic intent into consistent day-to-day behavior by improving the conditions that shape work:
-decision-making and escalation, incentives and recognition, collaboration patterns, information flow, psychological safety, leadership signals, and narratives.
-We also deliver Employer Brand and EVP work when it must be credible in lived experience and usable by leaders.
+We help organizations (1-25K employees) around the world turn strategic intent into consistent day-to-day behavior by improving the operating conditions that shape execution:
+decision-making and prioritization, incentives and recognition, collaboration patterns, information flow, psychological safety, leadership signals, and narratives.
+We also deliver Employer Brand and EVP work when it must be credible in lived experience and usable by leaders and managers.
 
 WHEN WE ARE MOST RELEVANT
 - Strategy is clear, but execution varies across teams/countries
