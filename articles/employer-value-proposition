@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Employer Value Proposition that works</title>
+  <meta name="description" content="Most organizations can define an EVP. The harder part is making it credible in lived experience and usable by leaders and managers." />
+  <meta name="robots" content="index,follow" />
+  <!-- Replace with the canonical URL of the article on your main site -->
+  <link rel="canonical" href="https://www.dandelionstrategies.com/employer-value-proposition/" />
+
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.55; margin: 0; }
+    main { max-width: 880px; margin: 0 auto; padding: 32px 18px; }
+    h1 { line-height: 1.15; margin: 0 0 14px; }
+    h2 { margin-top: 28px; }
+    p { margin: 12px 0; }
+    ul { margin: 10px 0 12px 22px; }
+    li { margin: 6px 0; }
+    .meta { color: #444; font-size: 0.95rem; margin-bottom: 20px; }
+    .callout { padding: 14px 16px; border: 1px solid #ddd; border-radius: 10px; background: #fafafa; margin: 18px 0; }
+    .footer { margin-top: 34px; font-size: 0.95rem; color: #444; }
+    a { color: inherit; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Employer Value Proposition that works",
+    "author": { "@type": "Person", "name": "Ernst Schipper" },
+    "publisher": { "@type": "Organization", "name": "Dandelion Strategies", "url": "https://www.dandelionstrategies.com/" },
+    "mainEntityOfPage": "https://www.dandelionstrategies.com/employer-value-proposition/"
+  }
+  </script>
+</head>
+<body>
+  <main>
+    <h1>Employer Value Proposition that works</h1>
+    <p class="meta">Dandelion Strategies · Amsterdam · Canonical: <a href="https://www.dandelionstrategies.com/REPLACE-WITH-EVP-URL/">dandelionstrategies.com</a></p>
+
+    <p>
+      Most organizations do not struggle to define an EVP. They struggle to make it credible.
+    </p>
+
+    <p>
+      The workshops are strong. The story resonates. The launch goes well. Leaders nod. Employees recognize themselves in the narrative.
+      For a moment, everything feels aligned. And after that, slowly, very little changes.
+      Managers continue to prioritize the same trade-offs. Collaboration patterns remain intact.
+      Performance expectations are measured the way they always were. The EVP becomes language rather than lived reality.
+    </p>
+
+    <div class="callout">
+      This is rarely a communication problem. An EVP becomes credible when the daily conditions of work reinforce it.
+    </div>
+
+    <h2>EVP is a commitment, not a campaign</h2>
+    <p>
+      An EVP is not just a promise to the market. It is a commitment about how the organization actually works.
+      When that promise conflicts with the underlying operating logic, people behave rationally.
+      They follow incentives. They respect decision boundaries. They optimize for what is rewarded.
+      Storytelling can create clarity, but it cannot carry execution on its own.
+    </p>
+
+    <p>
+      If you want the broader perspective behind this approach, see:
+      <a href="/articles/culture-as-a-system.html">Strategy doesn’t execute itself. Culture does the translating</a>.
+    </p>
+
+    <h2>How we treat EVP work differently</h2>
+    <p>
+      Instead of starting with messaging, we examine the conditions that would make the promise credible.
+      If collaboration is central to the EVP, does the collaboration architecture support it.
+      If ownership is emphasized, are decision rights clear enough for people to act.
+      If innovation is part of the narrative, is risk handled in a way that makes experimentation safe.
+    </p>
+
+    <p>
+      Only when the promise and the system reinforce each other does behavior begin to shift.
+    </p>
+
+    <h2>What changes when EVP becomes credible</h2>
+    <ul>
+      <li>Recruitment improves because the story is grounded in reality, not aspiration.</li>
+      <li>Retention improves because expectations are clearer and more consistent.</li>
+      <li>Leaders spend less time explaining and more time enabling.</li>
+      <li>Managers can use the EVP as a practical tool, not just a narrative.</li>
+    </ul>
+
+    <p>
+      Employer brand should not be a marketing layer. It should be an honest reflection of how the organization operates
+      and where it is willing to evolve.
+    </p>
+
+    <p class="footer">
+      Read the canonical version on the main site (recommended):
+      <a href="https://www.dandelionstrategies.com/employer-value-proposition/">dandelionstrategies.com</a>.
+      For inquiries: <a href="https://www.dandelionstrategies.com/contact/">contact</a>.
+      Also see: <a href="/ai.html">AI &amp; citation page</a>.
+    </p>
+  </main>
+</body>
+</html>
