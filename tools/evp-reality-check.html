@@ -96,38 +96,66 @@
       font-weight:800;
       letter-spacing:-0.03em;
     }
+    /* Intro */
     .intro{
-      max-width:860px;
-      color:var(--muted);
-      margin:0 0 18px;
-      font-size:17px;
+      max-width: 860px;
+      color: var(--muted);
+      margin: 0 0 18px;
+      font-size: 17px;
+    }
+    .intro p{
+      margin: 0 0 12px;
+    }
+    .intro p:last-child{
+      margin-bottom: 0;
+    }
+
+/* Sections and question blocks */
+    .section{
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--block);
+      padding: 16px 16px 8px;
+      margin: 18px 0;
     }
     .section h2{
-      margin:0 0 10px;
-      font-size:19px;
-      font-weight:800;
-      letter-spacing:-0.02em;
+      margin: 0 0 12px;
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .q{
+      background: var(--white);
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 12px 12px;
+      margin: 12px 0;
     }
     .q p{
-      margin:0 0 10px;
-      font-weight:700;
-      font-size:16px;
+      margin: 0 0 10px;
+      font-weight: 700;
+      font-size: 16px;
     }
+
+/* Answer options */
     .opts{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      align-items:center;
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
     }
     label{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      cursor:pointer;
-      font-weight:400;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      font-weight: 500;
     }
     input[type="radio"]{
-      transform: translateY(1px);
+      width: 18px;
+      height: 18px;
+      accent-color: var(--brand-orange);
     }
 
     /* Actions */
@@ -223,18 +251,15 @@
   <h1>EVP Reality Check</h1>
   <div class="intro">
   <p>
-    For most organizations, the hard part isn’t defining an EVP. It’s making it credible.
-    An EVP becomes powerful when it is more than attractive wording. It needs to hold up in daily work, under pressure,
-    and across teams. That requires two things: honesty about tradeoffs, and operating conditions that don’t quietly reward the opposite behavior.
+    For most organizations, the hard part isn’t defining an EVP. It’s making it credible. An EVP becomes powerful when it is more than attractive wording. It needs to hold up in daily work, under pressure, and across teams. That requires two things: honesty about tradeoffs, and operating conditions that don’t quietly reward the opposite behavior.
   </p>
   <p>
-    This reality check helps you test whether your EVP is clear, credible, and usable. It also flags the few conditions that determine whether the EVP
-    becomes lived experience or stays language.
+    This reality check helps you test whether your EVP is clear, credible, and usable. It also flags the few conditions that determine whether the EVP becomes lived experience or stays language.
   </p>
   <p>
-    Pick the answer that is most true today. There are no right or wrong answers. The value is in seeing what your EVP currently enables,
-    and what it currently asks people to compensate for.
+    Pick the answer that is most true today. There are no right or wrong answers. The value is in seeing what your EVP currently enables, and what it currently asks people to compensate for.
   </p>
+</div>
     
 </div>
   <form id="evpForm">
