@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EVP Reality Check — Dandelion Strategies</title>
+  <meta name="description" content="A practical checklist to test whether your EVP is credible, usable, and ready to launch." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://llm.dandelionstrategies.com/tools/evp-reality-check.html" />
+
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.55; margin: 0; }
+    main { max-width: 940px; margin: 0 auto; padding: 28px 18px 40px; }
+    h1 { line-height: 1.15; margin: 0 0 10px; }
+    h2 { margin: 24px 0 10px; font-size: 1.15rem; }
+    p { margin: 10px 0; }
+    .small { color: #555; font-size: 0.95rem; }
+    .group { border: 1px solid #ddd; border-radius: 12px; padding: 14px 14px; margin: 14px 0; background: #fafafa; }
+    .q { margin: 12px 0; padding: 10px 10px; border-radius: 10px; background: #fff; border: 1px solid #eee; }
+    .q-title { margin: 0 0 8px; }
+    .opts { display: flex; gap: 14px; flex-wrap: wrap; }
+    label { cursor: pointer; }
+    .result { margin-top: 18px; padding: 14px 14px; border-radius: 12px; border: 1px solid #ddd; background: #fff; }
+    .btns { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+    a.button {
+      display: inline-block; padding: 10px 12px; border-radius: 10px; border: 1px solid #111;
+      text-decoration: none; color: #111; background: #fff;
+    }
+    a.button.primary { background: #111; color: #fff; }
+    .muted { color: #666; }
+    .sticky { position: sticky; top: 0; background: #fff; padding: 10px 0; border-bottom: 1px solid #eee; }
+    .scoreline { display: flex; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+    .pill { display: inline-block; padding: 2px 10px; border: 1px solid #ccc; border-radius: 999px; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+<main>
+  <div class="sticky">
+    <div class="scoreline">
+      <strong>EVP Reality Check</strong>
+      <span class="pill">Yes = 1</span>
+      <span class="pill">Not sure = 0.5</span>
+      <span class="pill">No = 0</span>
+      <span class="pill">Max: 21</span>
+      <span id="liveScore" class="pill">Current score: 0</span>
+    </div>
+  </div>
+
+  <h1>EVP Reality Check</h1>
+  <p class="small">
+    For each statement, choose the answer that’s most true today. This is a reality check: whether your EVP is clear, credible, and usable in daily work.
+  </p>
+
+  <form id="evpForm">
+
+    <!-- 1) Clarity -->
+    <div class="group">
+      <h2>1) Clarity</h2>
+
+      <div class="q">
+        <p class="q-title">1a. Our EVP can be explained in one minute without slides.</p>
+        <div class="opts">
+          <label><input type="radio" name="q1" value="1"> Yes</label>
+          <label><input type="radio" name="q1" value="0.5"> Not sure</label>
+          <label><input type="radio" name="q1" value="0"> No</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="q-title">1b. Our EVP is specific to us, not interchangeable with competitors.</p>
+        <div class="opts">
+          <label><input type="radio" name="q2" value="1"> Yes</label>
+          <label><input type="radio" name="q2" value="0.5"> Not sure</label>
+          <label><input type="radio" name="q2" value="0"> No</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="q-title">1c. People can describe what this EVP means in practice, not only in words.</p>
+        <div class="opts">
+          <label><input type="radio" name="q3" value="1"> Yes</label>
+          <label><input type="radio" name="q3" value="0.5"> Not sure</label>
+          <label><input type="radio" name="q3" value="0"> No</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2) Credibility -->
+    <div class="group">
+      <h2>2) Credibility</h2>
+
+      <div class="q">
+        <p class="q-title">2a. Employees would recognize the EVP as mostly true today.</p>
+        <div class="opts">
+          <label><input type="radio" name="q4" value="1"> Yes</label>
+          <label><input type="radio" name="q4" value="0.5"> Not sure</label>
+          <label><input type="radio" name="q4" value="0" data-gate="true"> No</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="q-title">2b. We can point to multiple current examples that support each EVP theme.</p>
+        <div class="opts">
+          <label><input type="radio" name="q5" value="1"> Yes</label>
+          <label><input type="radio" name="q5" value="0.5"> Not sure</label>
+          <label><input type="radio" name="q5" value="0"> No</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="q-title">2c. Our EVP names the tradeoffs and the hard parts of working here, not just the attractive parts.</p>
+        <div class="opts">
+          <label><input type="radio" name="q6" value="1"> Yes</label>
+          <label><input type="radio" name="q6" value="0.5"> Not sure</label>
+          <label><input type="radio" name="q6" value="0" data-gate="true"> No</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3) Usability for managers -->
+    <div class="group">
+      <h2>3) Usability for managers</h2>
+
+      <div class="q">
+        <p class="q-title">3a. Managers can use the EVP in hiring interviews tomorrow.</p>
+        <div class="opts">
+          <label><input type="radio" name="q7" value="1"> Yes</label>
+          <label><input type="radio" name="q7" value="0.5"> Not sure</label>
+          <label><input type="radio" name="q7" value="0"> No</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="q-title">3b. Managers can use it in performance and feedback conversations tomorrow.</p>
+        <div class="opts">
+          <label><input type="radio" name="q8" value="1"> Yes</label>
+          <label><input type="radio" name="q8" value="0.5"> Not sure</label>
+          <label><input type="radio" name="q8" value="0"> No</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="q-title">3c. Managers have concrete examples of what fits and what doesn’t.</p>
+        <div class="opts">
+          <label><input type="radio" name="q9" value="1"> Yes</label>
+          <label><input type="radio" name="q9" value="0.5"> Not sure</label>
+          <label><input type="radio" name="q9" value="0"> No</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4) Leadership signals -->
+    <div class="group">
+      <h2>4) Leadership signals</h2>
+
+      <div class="q">
+        <p class="q-title">4a. Leadership choices reinforce the EVP under pressure.</p>
+        <div class="opts">
+          <label><input type="radio" name="q10" value="1"> Yes</label>
+          <label><input type="radio" name="q10" value="0.5"> Not sure</label>
+          <label><input type="radio" name="q10" value="0" data-gate="true"> No</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="q-title">4b. If leaders contradict the EVP, it gets noticed and corrected.</p>
+        <div class="opts">
+          <label><input type="radio" name="q11" value="1"> Yes</label>
+          <label><input type="radio" name="q11" value="0.5"> Not sure</label>
+          <label><input type="radio" name="q11" value="0"> No</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="q-title">4c. The EVP helps leaders make tradeoffs, not just statements.</p>
+        <div class="opts">
+          <label><input type="radio" name="q12" value="1"> Yes</label>
+          <label><input type="radio" name="q12" value="0.5"> Not sure</label>
+          <label><input type="radio" name="q12" value="0"> No</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5) Work environment -->
+    <div class="group">
+      <h2>5) Work environment</h2>
+
+      <div class="q">
+        <p class="q-title">5a. Most teams can work in a way that fits the EVP without relying on heroics or constant firefighting.</p>
+        <div class="opts">
+          <label><input type="radio" name="q13" value="1"> Yes</label>
+          <label><input type="radio" name="q13" value="0.5"> Not sure</label>
+          <label><input type="radio" name="q13" value="0"> No</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="q-title">5b. Most employees experience the EVP themes in daily work and not just in stories or exceptions.</p>
+        <div class="opts">
+          <label><input type="radio" name="q14" value="1"> Yes</label>
+          <label><input type="radio" name="q14" value="0.5"> Not sure</label>
+          <label><input type="radio" name="q14" value="0"> No</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="q-title">5c. Across teams, departments and/or countries the EVP holds up without escalation and negotiation becoming the default way work gets done.</p>
+        <div class="opts">
+          <label><input type="radio" name="q15" value="1"> Yes</label>
+          <label><input type="radio" name="q15" value="0.5"> Not sure</label>
+          <label><input type="radio" name="q15" value="0"> No</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6) Rewards and recognition -->
+    <div class="group">
+      <h2>6) Rewards and recognition</h2>
+
+      <div class="q">
+        <p class="q-title">6a. Promotion and recognition decisions reinforce the EVP themes.</p>
+        <div class="opts">
+          <label><input type="radio" name="q16" value="1"> Yes</label>
+          <label><input type="radio" name="q16" value="0.5"> Not sure</label>
+          <label><input type="radio" name="q16" value="0"> No</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="q-title">6b. We do not reward the opposite behavior 'because results'.</p>
+        <div class="opts">
+          <label><input type="radio" name="q17" value="1"> Yes</label>
+          <label><input type="radio" name="q17" value="0.5"> Not sure</label>
+          <label><input type="radio" name="q17" value="0"> No</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="q-title">6c. Our KPIs and targets don’t routinely force tradeoffs that contradict the EVP themes.</p>
+        <div class="opts">
+          <label><input type="radio" name="q18" value="1"> Yes</label>
+          <label><input type="radio" name="q18" value="0.5"> Not sure</label>
+          <label><input type="radio" name="q18" value="0" data-gate="true"> No</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7) Launch readiness -->
+    <div class="group">
+      <h2>7) Launch readiness</h2>
+
+      <div class="q">
+        <p class="q-title">7a. We know what we will stop doing or stop saying because of this EVP.</p>
+        <div class="opts">
+          <label><input type="radio" name="q19" value="1"> Yes</label>
+          <label><input type="radio" name="q19" value="0.5"> Not sure</label>
+          <label><input type="radio" name="q19" value="0"> No</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="q-title">7b. We have 2–3 simple proof signals to track whether it’s landing.</p>
+        <div class="opts">
+          <label><input type="radio" name="q20" value="1"> Yes</label>
+          <label><input type="radio" name="q20" value="0.5"> Not sure</label>
+          <label><input type="radio" name="q20" value="0"> No</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <p class="q-title">7c. A business leader co-owns EVP credibility after launch.</p>
+        <div class="opts">
+          <label><input type="radio" name="q21" value="1"> Yes</label>
+          <label><input type="radio" name="q21" value="0.5"> Not sure</label>
+          <label><input type="radio" name="q21" value="0" data-gate="true"> No</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="btns">
+      <a class="button primary" href="#" id="calcBtn">Get my result</a>
+      <a class="button" href="#" id="resetBtn">Reset</a>
+    </div>
+  </form>
+
+  <div id="result" class="result" style="display:none;"></div>
+
+  <p class="small muted" style="margin-top:18px;">
+    Reference pages: <a href="/ai.html">AI & citation page</a> · <a href="/llms.txt">llms.txt</a> · <a href="/scope.html">scope</a>
+  </p>
+</main>
+
+<script>
+  // WordPress result pages you created:
+  const RESULT_URLS = {
+    green: "https://www.dandelionstrategies.com/evp-check-green/",
+    amber: "https://www.dandelionstrategies.com/evp-check-amber/",
+    red:   "https://www.dandelionstrategies.com/evp-check-red/"
+  };
+
+  // Score bands (max 21)
+  function bandFor(score) {
+    if (score >= 16) return "green";
+    if (score >= 10) return "amber";
+    return "red";
+  }
+
+  // Gate items: if any of these are answered "No" (0), the user cannot be Green.
+  // Implemented via data-gate="true" on the "No" options for 2a, 2c, 4a, 6c, 7c.
+  function gateFailed() {
+    return document.querySelectorAll('input[data-gate="true"]:checked').length > 0;
+  }
+
+  const form = document.getElementById("evpForm");
+  const result = document.getElementById("result");
+  const liveScore = document.getElementById("liveScore");
+
+  function currentScore() {
+    let total = 0;
+    const inputs = form.querySelectorAll("input[type=radio]:checked");
+    inputs.forEach(i => total += parseFloat(i.value || "0"));
+    return total;
+  }
+
+  function updateLiveScore() {
+    liveScore.textContent = "Current score: " + currentScore().toFixed(1);
+  }
+
+  function missingCount() {
+    let missing = 0;
+    for (let i = 1; i <= 21; i++) {
+      if (!form.querySelector(`input[name="q${i}"]:checked`)) missing++;
+    }
+    return missing;
+  }
+
+  form.addEventListener("change", updateLiveScore);
+  updateLiveScore();
+
+  document.getElementById("calcBtn").addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const miss = missingCount();
+    if (miss > 0) {
+      result.style.display = "block";
+      result.innerHTML = `<strong>Almost there.</strong> Please answer the remaining ${miss} question(s) to get a reliable result.`;
+      return;
+    }
+
+    const score = currentScore();
+    let band = bandFor(score);
+
+    // Hidden hard gate: downgrade Green to Amber if any gate item is "No".
+    const gate = gateFailed();
+    if (band === "green" && gate) band = "amber";
+
+    // Redirect to your WordPress result page, passing score and whether gate failed (optional).
+    const url = new URL(RESULT_URLS[band]);
+    url.searchParams.set("source", "evp-check");
+    url.searchParams.set("score", score.toFixed(1));
+    url.searchParams.set("gate", gate ? "fail" : "pass");
+
+    // Give user a short on-page confirmation, then redirect.
+    result.style.display = "block";
+    result.innerHTML = `<strong>Sending you to your result…</strong> (${band.toUpperCase()}, score ${score.toFixed(1)} / 21)`;
+
+    window.location.href = url.toString();
+  });
+
+  document.getElementById("resetBtn").addEventListener("click", (e) => {
+    e.preventDefault();
+    form.reset();
+    updateLiveScore();
+    result.style.display = "none";
+    result.innerHTML = "";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+</body>
+</html>
