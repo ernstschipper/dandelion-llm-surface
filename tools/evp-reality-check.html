@@ -83,6 +83,65 @@
     }
     nav a:hover{ text-decoration:none; color:var(--brand-purple); }
 
+    /* ---- EVP tool layout fixes ---- */
+
+    .intro{
+      max-width: 860px;
+      color: var(--muted);
+      margin: 0 0 18px;
+      font-size: 17px;
+    }
+    .intro p{ margin: 0 0 12px; }
+    .intro p:last-child{ margin-bottom: 0; }
+
+    .section{
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--block);
+      padding: 16px 16px 8px;
+      margin: 18px 0;
+    }
+    .section h2{
+      margin: 0 0 12px;
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .q{
+      background: var(--white);
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 12px 12px;
+      margin: 12px 0;
+    }
+    .q p{
+      margin: 0 0 10px;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .opts{
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    label{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+/* Make radios look intentional and brand-aligned */
+    input[type="radio"]{
+      width: 18px;
+      height: 18px;
+      accent-color: var(--brand-orange);
+    }
+    
     /* Page layout */
     main{
       max-width:var(--max);
@@ -250,6 +309,10 @@
 <main>
   <h1>EVP Reality Check</h1>
   <div class="intro">
+    <p>…</p>
+    <p>…</p>
+    <p>…</p>
+  </div>
   <p>
     For most organizations, the hard part isn’t defining an EVP. It’s making it credible. An EVP becomes powerful when it is more than attractive wording. It needs to hold up in daily work, under pressure, and across teams. That requires two things: honesty about tradeoffs, and operating conditions that don’t quietly reward the opposite behavior.
   </p>
