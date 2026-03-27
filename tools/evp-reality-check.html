@@ -57,16 +57,14 @@
       gap:10px;
       text-decoration:none;
     }
-    .brandmark{
-      font-weight:800;
-      letter-spacing:0.5px;
-      line-height:1.0;
-      font-size:26px;
+    .brandlogo{
+      height:56px;
+      width:auto;
+      display:block;
     }
-    .brandmark span{ display:block; }
-    .brandmark .top{ color:var(--brand-purple); }
-    .brandmark .bottom{ color:var(--brand-purple); }
-
+    @media (max-width:720px){
+    .brandlogo{ height:44px; }
+    }
     nav ul{
       list-style:none;
       padding:0;
@@ -93,40 +91,27 @@
     }
     h1{
       margin:0 0 10px;
-      line-height:1.15;
-      font-size:34px;
-      letter-spacing:-0.02em;
+      line-height:1.12;
+      font-size:38px;
+      font-weight:800;
+      letter-spacing:-0.03em;
     }
     .intro{
-      max-width:820px;
+      max-width:860px;
       color:var(--muted);
       margin:0 0 18px;
-      font-size:16px;
-    }
-
-    /* Sections and question blocks */
-    .section{
-      border:1px solid var(--border);
-      border-radius:14px;
-      background:var(--block);
-      padding:16px 16px 8px;
-      margin:16px 0;
+      font-size:17px;
     }
     .section h2{
       margin:0 0 10px;
-      font-size:18px;
-      letter-spacing:-0.01em;
-    }
-    .q{
-      background:var(--white);
-      border:1px solid #eee;
-      border-radius:12px;
-      padding:12px 12px;
-      margin:10px 0;
+      font-size:19px;
+      font-weight:800;
+      letter-spacing:-0.02em;
     }
     .q p{
       margin:0 0 10px;
-      font-weight:600;
+      font-weight:700;
+      font-size:16px;
     }
     .opts{
       display:flex;
@@ -218,16 +203,8 @@
 <header>
   <div class="navwrap">
     <a class="brand" href="https://www.dandelionstrategies.com/" aria-label="Dandelion Strategies">
-      <!-- If you want a logo image instead of text:
-           1) Add logo file to repo, e.g. /assets/logo.png
-           2) Replace the div below with:
-              <img src="/assets/logo.png" alt="Dandelion Strategies" style="height:44px;width:auto;">
-      -->
-      <div class="brandmark" aria-hidden="true">
-        <span class="top">DANDELION</span>
-        <span class="bottom">STRATEGIES</span>
-      </div>
-    </a>
+  <img class="brandlogo" src="/assets/Dandelion_Strategies_Logo_FC.png" alt="Dandelion Strategies" />
+</a>
 
     <nav aria-label="Primary navigation">
       <ul>
