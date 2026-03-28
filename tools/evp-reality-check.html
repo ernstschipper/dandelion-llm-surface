@@ -517,55 +517,44 @@
     document.body.classList.add("embed");
   }
 
-  // If embedded, tell the parent page our height so the iframe can resize
-function sendHeightToParent() {
-  if (!document.body.classList.contains("embed")) return;
-  const height = Math.ceil(document.documentElement.scrollHeight);
-  window.parent.postMessage({ type: "ds-evp-iframe-height", height }, "*");
-}
+<script>
+  // Embed mode: hide nav + intro + footer when embedded on the main site
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("embed") === "1") {
+    document.body.classList.add("embed");
+  }
 
-// Send on load and when layout might change
-window.addEventListener("load", sendHeightToParent);
-window.addEventListener("resize", sendHeightToParent);
+  // Reliable iframe auto-resize (embed mode)
+  function postHeight() {
+    if (!document.body.classList.contains("embed")) return;
 
-// Also send after selecting options (content height can shift slightly)
-document.addEventListener("change", (e) => {
-  if (e.target && e.target.matches('input[type="radio"]')) sendHeightToParent();
-});
+    const main = document.querySelector("main");
+    const h = Math.ceil(main ? main.scrollHeight : document.body.scrollHeight);
 
-  // --- iframe auto-resize (embed mode) ---
-function postHeight() {
-  if (!document.body.classList.contains("embed")) return;
+    window.parent.postMessage(
+      { type: "ds-evp-iframe-height", height: h },
+      "https://www.dandelionstrategies.com"
+    );
+  }
 
-  // Use scrollHeight after layout settles
-  const h = Math.ceil(document.documentElement.scrollHeight);
+  if (document.body.classList.contains("embed")) {
+    // Send multiple times to handle late font load / layout shifts
+    window.addEventListener("load", () => {
+      postHeight();
+      setTimeout(postHeight, 150);
+      setTimeout(postHeight, 400);
+      setTimeout(postHeight, 900);
+    });
 
-  // Send to parent (WP page)
-  window.parent.postMessage(
-    { type: "ds-evp-iframe-height", height: h },
-    "https://www.dandelionstrategies.com"
-  );
-}
+    // Update on interaction and viewport changes
+    document.addEventListener("change", (e) => {
+      if (e.target && e.target.matches('input[type="radio"]')) {
+        setTimeout(postHeight, 60);
+      }
+    });
 
-// Send height multiple times to survive late font load / layout shifts
-if (document.body.classList.contains("embed")) {
-  window.addEventListener("load", () => {
-    postHeight();
-    setTimeout(postHeight, 150);
-    setTimeout(postHeight, 400);
-    setTimeout(postHeight, 900);
-  });
-
-  // Update when user interacts (radio changes can change height slightly)
-  document.addEventListener("change", (e) => {
-    if (e.target && e.target.matches('input[type="radio"]')) {
-      setTimeout(postHeight, 50);
-    }
-  });
-
-  // Update on resize
-  window.addEventListener("resize", () => setTimeout(postHeight, 50));
-}
+    window.addEventListener("resize", () => setTimeout(postHeight, 60));
+  }
 
   // WordPress result pages you created:
   const RESULT_URLS = {
