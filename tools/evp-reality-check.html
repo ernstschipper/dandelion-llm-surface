@@ -533,6 +533,40 @@ document.addEventListener("change", (e) => {
   if (e.target && e.target.matches('input[type="radio"]')) sendHeightToParent();
 });
 
+  // --- iframe auto-resize (embed mode) ---
+function postHeight() {
+  if (!document.body.classList.contains("embed")) return;
+
+  // Use scrollHeight after layout settles
+  const h = Math.ceil(document.documentElement.scrollHeight);
+
+  // Send to parent (WP page)
+  window.parent.postMessage(
+    { type: "ds-evp-iframe-height", height: h },
+    "https://www.dandelionstrategies.com"
+  );
+}
+
+// Send height multiple times to survive late font load / layout shifts
+if (document.body.classList.contains("embed")) {
+  window.addEventListener("load", () => {
+    postHeight();
+    setTimeout(postHeight, 150);
+    setTimeout(postHeight, 400);
+    setTimeout(postHeight, 900);
+  });
+
+  // Update when user interacts (radio changes can change height slightly)
+  document.addEventListener("change", (e) => {
+    if (e.target && e.target.matches('input[type="radio"]')) {
+      setTimeout(postHeight, 50);
+    }
+  });
+
+  // Update on resize
+  window.addEventListener("resize", () => setTimeout(postHeight, 50));
+}
+
   // WordPress result pages you created:
   const RESULT_URLS = {
     green: "https://www.dandelionstrategies.com/evp-check-green/",
