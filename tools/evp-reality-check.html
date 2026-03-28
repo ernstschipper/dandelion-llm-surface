@@ -7,7 +7,17 @@
   <meta name="description" content="A practical checklist by Dandelion Strategies to test whether your EVP is clear, credible, and usable in daily work." />
   <meta name="robots" content="index,follow" />
 
-  <link rel="canonical" href="https://www.dandelionstrategies.com/tools/evp-reality-check" />
+  <link rel="canonical" href="https://www.dandelionstrategies.com/tools/evp-reality" />
+
+  <!-- Apply embed mode EARLY (before render) -->
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      if (params.get("embed") === "1") {
+        document.documentElement.classList.add("embed");
+      }
+    })();
+  </script>
 
   <!-- Public Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -91,6 +101,7 @@
       margin:0 auto;
       padding:26px 18px 48px;
     }
+
     h1{
       margin:0 0 10px;
       line-height:1.12;
@@ -214,13 +225,13 @@
     .footerlinks a{ text-decoration:underline; }
     .footerlinks a:hover{ color:var(--brand-purple); }
 
-    /* Embed mode hides header + intro + footer; keeps styling intact */
-    body.embed header,
-    body.embed #toolIntro,
-    body.embed .footerlinks {
+    /* Embed mode: hide nav + intro + footer on the embedded version */
+    html.embed header,
+    html.embed #toolIntro,
+    html.embed .footerlinks{
       display:none !important;
     }
-    body.embed main{
+    html.embed main{
       padding-top:18px;
     }
 
@@ -511,22 +522,9 @@
 </main>
 
 <script>
-  // Embed mode: hide nav + intro + footer when embedded on the main site
-  const params = new URLSearchParams(window.location.search);
-  if (params.get("embed") === "1") {
-    document.body.classList.add("embed");
-  }
-
-<script>
-  // Embed mode: hide nav + intro + footer when embedded on the main site
-  const params = new URLSearchParams(window.location.search);
-  if (params.get("embed") === "1") {
-    document.body.classList.add("embed");
-  }
-
-  // Reliable iframe auto-resize (embed mode)
+  // Reliable iframe auto-resize (embed mode only)
   function postHeight() {
-    if (!document.body.classList.contains("embed")) return;
+    if (!document.documentElement.classList.contains("embed")) return;
 
     const main = document.querySelector("main");
     const h = Math.ceil(main ? main.scrollHeight : document.body.scrollHeight);
@@ -537,8 +535,7 @@
     );
   }
 
-  if (document.body.classList.contains("embed")) {
-    // Send multiple times to handle late font load / layout shifts
+  if (document.documentElement.classList.contains("embed")) {
     window.addEventListener("load", () => {
       postHeight();
       setTimeout(postHeight, 150);
@@ -546,7 +543,6 @@
       setTimeout(postHeight, 900);
     });
 
-    // Update on interaction and viewport changes
     document.addEventListener("change", (e) => {
       if (e.target && e.target.matches('input[type="radio"]')) {
         setTimeout(postHeight, 60);
@@ -556,21 +552,19 @@
     window.addEventListener("resize", () => setTimeout(postHeight, 60));
   }
 
-  // WordPress result pages you created:
+  // Result routing logic (unchanged)
   const RESULT_URLS = {
     green: "https://www.dandelionstrategies.com/evp-check-green/",
     amber: "https://www.dandelionstrategies.com/evp-check-amber/",
     red:   "https://www.dandelionstrategies.com/evp-check-red/"
   };
 
-  // Score bands (max 21)
   function bandFor(score) {
     if (score >= 16) return "green";
     if (score >= 10) return "amber";
     return "red";
   }
 
-  // Hard gate: if any marked gate items are answered "No", user cannot land on Green.
   function gateFailed() {
     return document.querySelectorAll('input[data-gate="true"]:checked').length > 0;
   }
@@ -598,6 +592,7 @@
     if (miss > 0) {
       result.style.display = "block";
       result.textContent = `Almost there. Please answer the remaining ${miss} question(s) to get a reliable result.`;
+      postHeight();
       return;
     }
 
@@ -614,6 +609,7 @@
 
     result.style.display = "block";
     result.textContent = "Sending you to your result…";
+    postHeight();
 
     window.location.href = url.toString();
   });
@@ -622,6 +618,7 @@
     form.reset();
     result.style.display = "none";
     result.textContent = "";
+    postHeight();
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 </script>
