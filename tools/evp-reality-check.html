@@ -517,6 +517,22 @@
     document.body.classList.add("embed");
   }
 
+  // If embedded, tell the parent page our height so the iframe can resize
+function sendHeightToParent() {
+  if (!document.body.classList.contains("embed")) return;
+  const height = Math.ceil(document.documentElement.scrollHeight);
+  window.parent.postMessage({ type: "ds-evp-iframe-height", height }, "*");
+}
+
+// Send on load and when layout might change
+window.addEventListener("load", sendHeightToParent);
+window.addEventListener("resize", sendHeightToParent);
+
+// Also send after selecting options (content height can shift slightly)
+document.addEventListener("change", (e) => {
+  if (e.target && e.target.matches('input[type="radio"]')) sendHeightToParent();
+});
+
   // WordPress result pages you created:
   const RESULT_URLS = {
     green: "https://www.dandelionstrategies.com/evp-check-green/",
