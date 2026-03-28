@@ -4,14 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EVP Reality Check — Dandelion Strategies</title>
-  <meta name="description" content="A practical checklist to test whether your EVP is clear, credible, and usable in daily work." />
+  <meta name="description" content="A practical checklist by Dandelion Strategies to test whether your EVP is clear, credible, and usable in daily work." />
   <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://llm.dandelionstrategies.com/tools/evp-reality-check.html" />
+
+  <link rel="canonical" href="https://www.dandelionstrategies.com/tools/evp-reality-check" />
 
   <!-- Public Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -62,9 +63,6 @@
       width:auto;
       display:block;
     }
-    @media (max-width:720px){
-    .brandlogo{ height:44px; }
-    }
     nav ul{
       list-style:none;
       padding:0;
@@ -87,65 +85,6 @@
       color: var(--brand-orange);
     }
 
-    /* ---- EVP tool layout fixes ---- */
-
-    .intro{
-      max-width: 860px;
-      color: var(--muted);
-      margin: 0 0 18px;
-      font-size: 17px;
-    }
-    .intro p{ margin: 0 0 12px; }
-    .intro p:last-child{ margin-bottom: 0; }
-
-    .section{
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: var(--block);
-      padding: 16px 16px 8px;
-      margin: 18px 0;
-    }
-    .section h2{
-      margin: 0 0 12px;
-      font-size: 19px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-
-    .q{
-      background: var(--white);
-      border: 1px solid #eee;
-      border-radius: 12px;
-      padding: 12px 12px;
-      margin: 12px 0;
-    }
-    .q p{
-      margin: 0 0 10px;
-      font-weight: 700;
-      font-size: 16px;
-    }
-
-    .opts{
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    label{
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-      font-weight: 500;
-    }
-
-/* Make radios look intentional and brand-aligned */
-    input[type="radio"]{
-      width: 18px;
-      height: 18px;
-      accent-color: var(--brand-orange);
-    }
-    
     /* Page layout */
     main{
       max-width:var(--max);
@@ -159,6 +98,7 @@
       font-weight:800;
       letter-spacing:-0.03em;
     }
+
     /* Intro */
     .intro{
       max-width: 860px;
@@ -166,14 +106,10 @@
       margin: 0 0 18px;
       font-size: 17px;
     }
-    .intro p{
-      margin: 0 0 12px;
-    }
-    .intro p:last-child{
-      margin-bottom: 0;
-    }
+    .intro p{ margin: 0 0 12px; }
+    .intro p:last-child{ margin-bottom: 0; }
 
-/* Sections and question blocks */
+    /* Sections and question blocks */
     .section{
       border: 1px solid var(--border);
       border-radius: 14px;
@@ -201,7 +137,6 @@
       font-size: 16px;
     }
 
-/* Answer options */
     .opts{
       display: flex;
       gap: 18px;
@@ -279,12 +214,22 @@
     .footerlinks a{ text-decoration:underline; }
     .footerlinks a:hover{ color:var(--brand-purple); }
 
+    /* Embed mode hides header + intro + footer; keeps styling intact */
+    body.embed header,
+    body.embed #toolIntro,
+    body.embed .footerlinks {
+      display:none !important;
+    }
+    body.embed main{
+      padding-top:18px;
+    }
+
     /* Mobile tweaks */
     @media (max-width:720px){
       h1{ font-size:30px; }
       nav ul{ gap:14px; }
       nav a{ font-size:13px; }
-      .brandmark{ font-size:22px; }
+      .brandlogo{ height:44px; }
     }
   </style>
 </head>
@@ -294,8 +239,8 @@
 <header>
   <div class="navwrap">
     <a class="brand" href="https://www.dandelionstrategies.com/" aria-label="Dandelion Strategies">
-  <img class="brandlogo" src="/assets/Dandelion_Strategies_Logo_FC.png" alt="Dandelion Strategies" />
-</a>
+      <img class="brandlogo" src="/assets/Dandelion_Strategies_Logo_FC.png" alt="Dandelion Strategies" />
+    </a>
 
     <nav aria-label="Primary navigation">
       <ul>
@@ -311,21 +256,27 @@
 </header>
 
 <main>
-  <h1>EVP Reality Check</h1>
-  <div class="intro">
+
+  <div id="toolIntro">
+    <h1>EVP Reality Check</h1>
+
+    <div class="intro">
+      <p>
+        For most organizations, the hard part isn’t defining an EVP. It’s making it credible. An EVP becomes powerful when it is more than beautiful wording.
+        It needs to hold up in daily work, under pressure, and across teams/countries. That requires two things: honesty about tradeoffs,
+        and operating conditions that don’t reward the opposite behavior.
+      </p>
+      <p>
+        This checklist helps you test whether your EVP is clear, credible, and usable. It also flags the few conditions that determine whether the EVP becomes lived
+        experience or stays language.
+      </p>
+      <p>
+        Pick the answer that is most true today. There are no right or wrong answers. The value is in seeing what your EVP currently enables,
+        and what it currently asks people to compensate for.
+      </p>
+    </div>
   </div>
-  <p>
-    For most organizations, the hard part isn’t defining an EVP. It’s making it credible. An EVP becomes powerful when it is more than beautiful wording. It needs to hold up in daily work, under pressure, and across teams/countries. That requires two things: honesty about tradeoffs, and operating conditions that don’t reward the opposite behavior.
-  </p>
-  <p>
-    This checklist helps you test whether your EVP is clear, credible, and usable. It also flags the few conditions that determine whether the EVP becomes lived experience or stays language.
-  </p>
-  <p>
-    Pick the answer that is most true today. There are no right or wrong answers. The value is in seeing what your EVP currently enables, and what it currently asks people to compensate for.
-  </p>
-</div>
-    
-</div>
+
   <form id="evpForm">
 
     <div class="section">
@@ -496,7 +447,7 @@
       </div>
 
       <div class="q">
-        <p>We do not reward the opposite behavior 'because results'.</p>
+        <p>We do not reward the opposite behavior “because results”.</p>
         <div class="opts">
           <label><input type="radio" name="q17" value="1">Yes</label>
           <label><input type="radio" name="q17" value="0.5">Not sure</label>
@@ -555,11 +506,17 @@
   </form>
 
   <div class="footerlinks">
-    Reference pages: <a href="/ai.html">AI & citation page</a> · <a href="/llms.txt">llms.txt</a> · <a href="/scope.html">scope</a>
+    Reference pages: <a href="/ai.html">AI &amp; citation page</a> · <a href="/llms.txt">llms.txt</a> · <a href="/scope.html">scope</a>
   </div>
 </main>
 
 <script>
+  // Embed mode: hide nav + intro + footer when embedded on the main site
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("embed") === "1") {
+    document.body.classList.add("embed");
+  }
+
   // WordPress result pages you created:
   const RESULT_URLS = {
     green: "https://www.dandelionstrategies.com/evp-check-green/",
@@ -574,7 +531,7 @@
     return "red";
   }
 
-  // Hard gate: if any of the marked gate items are answered "No", user cannot land on Green.
+  // Hard gate: if any marked gate items are answered "No", user cannot land on Green.
   function gateFailed() {
     return document.querySelectorAll('input[data-gate="true"]:checked').length > 0;
   }
